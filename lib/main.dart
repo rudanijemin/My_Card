@@ -9,10 +9,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         backgroundColor: Colors.teal,
         body: SafeArea(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               CircleAvatar(
                 radius: 50,
@@ -38,10 +40,16 @@ class MyApp extends StatelessWidget {
                 ),
 
               ),
-              Container(
-                padding: EdgeInsets.all(10),
+              SizedBox(
+                width: 180,
+                child: Divider(
+                  color: Colors.tealAccent,
+                ),
+              ),
+
+              Card(
                 color: Colors.white,
-                margin: EdgeInsets.symmetric(vertical: 10,horizontal: 25),
+                margin: EdgeInsets.symmetric(vertical: 15,horizontal: 45),
                 child: Row(
                   children: <Widget>[
                     Icon(
@@ -60,26 +68,20 @@ class MyApp extends StatelessWidget {
                   ],
                 ),
               ),
-              Container(
-                padding: EdgeInsets.all(10),
+              Card(
                 color: Colors.white,
-                margin: EdgeInsets.symmetric(vertical: 10,horizontal: 25),
-                child: Row(
-                  children: <Widget>[
-                    Icon(
-                      Icons.email,
-                      color: Colors.teal.shade300,
+                margin: EdgeInsets.symmetric(vertical: 1,horizontal: 25),
+                child:ListTile(
+                  leading: Icon(
+                    Icons.email,
+                    color: Colors.teal.shade300,
+                  ),
+                  title: Text(
+                    'rudanijemin@gmail.com',
+                    style: TextStyle(
+                      fontSize: 20,
                     ),
-                    SizedBox(           //keep center
-                      width: 10,
-                    ),
-                    Text(
-                      'rudanijemin@gmail.com',
-                      style: TextStyle(
-                        fontSize: 20,
-                      ),
-                    ),
-                  ],
+                  ) ,
                 ),
               ),
             ],
@@ -89,3 +91,4 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
